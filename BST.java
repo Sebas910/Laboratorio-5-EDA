@@ -7,7 +7,31 @@ public class BST{
         raiz = new Node(name, score);
     }
 
-}
+    public void  Agregar(String name, int score) {
+        raiz = AgregarRecursivo(raiz, name, score);
+    }
+
+    private Node AgregarRecursivo(Node raiz , String name, int score){
+
+        if(raiz == null){
+
+            return new Node(name, score);
+        }
+
+        else if(score < raiz.score){
+
+            raiz.left = AgregarRecursivo(raiz.left, name, score);
+        }
+        else if(score > raiz.score){
+
+            raiz.right = AgregarRecursivo(raiz.right, name, score);
+        }
+
+
+
+
+
+return }
 
 class Node {
 
